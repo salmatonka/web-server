@@ -1,10 +1,19 @@
 import React from 'react';
-
+import  './Courses.css';
 const Courses = () => {
     return (
-       
-             
-   <div><h2>hhh</h2></div>
+    <div className='left-container'>
+       <div className="cart-container">
+<h1>hhhhhh</h1>
+
+      </div>
+
+      <div className="right-container">
+
+<h1>gggggg</h1>
+      </div>
+    </div>
+
     );
 };
 

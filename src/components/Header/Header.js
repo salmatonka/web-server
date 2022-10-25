@@ -1,38 +1,56 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 
-
+import { Link} from 'react-router-dom';
+import React from 'react';
+import { FaAsymmetrik } from 'react-icons/fa';
 const Header = () => {
-    return (
-      <Navbar  bg="light"expand="lg">
-      <Container fluid>
-        <Navbar.Brand href="#">Web-Technology-Tutorial</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Course</Nav.Link>
-            <Nav.Link href="#action3">FAQ</Nav.Link>
-            <Nav.Link href="#action4">Profile</Nav.Link>
-            <Nav.Link href="#action5">Blog</Nav.Link>
-            
-          </Nav>
-          <Form className="d-flex  ">
-          <Nav.Link className=" mx-3" href="#action1">Login</Nav.Link>
-            <Nav.Link className=" mx-3" href="#action2">LogOut</Nav.Link>
-            <Button className=" mx-3" variant="outline-primary">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-    );
+  return (
+    <header className="p-4  bg-sky-200 dark:bg-gray-800 dark:text-gray-100">
+	<div className="container flex justify-between h-16 mx-auto">
+		<Link rel="noopener noreferrer" to="/" aria-label="Back to homepage" className="flex items-center p-2">
+			
+    <FaAsymmetrik className='w-10 h-10'></FaAsymmetrik>
+      <span className='ml-3 text-xl fw-bolder'>Web Technology Tutorial</span>
+		</Link>
+		<ul className="items-stretch hidden space-x-3 lg:flex">
+			<li className="flex">
+				<Link rel="noopener noreferrer" to="/Home" className="flex items-center px-4 -mb-1 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Home</Link>
+			</li>
+			<li className="flex">
+				<Link rel="noopener noreferrer" to="/courses" className="flex items-center px-4 -mb-1 dark:border-transparent">Courses</Link>
+			</li>
+			<li className="flex">
+				<Link rel="noopener noreferrer" to="/details" className="flex items-center px-4 -mb-1 dark:border-transparent">Details</Link>
+			</li>
+			<li className="flex">
+				<Link rel="noopener noreferrer" to="/blog" className="flex items-center px-4 -mb-1 dark:border-transparent">Blog</Link>
+			</li>
+		</ul>
+		<div className="items-center flex-shrink-0 hidden lg:flex">
+			<button className="self-center px-8 py-3 rounded">Sign in</button>
+			<button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Sign up</button>
+		</div>
+		<button className="p-4 lg:hidden">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-100">
+				<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
+		</button>
+	</div>
+</header>
+  );
 };
 
 export default Header;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

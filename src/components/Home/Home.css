@@ -1,0 +1,14 @@
+.home-container{
+    background-image:url("../../assets/images/March-12-Letter\ \(1\).jpg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+    height: 100vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    color: black;
+
+}

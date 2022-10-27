@@ -1,6 +1,63 @@
-import React from 'react';
-import { Link} from 'react-router-dom';
+import React, { useContext,useState } from 'react';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+import { AuthContext } from '../../contexts/UserContext';
 const Login = () => {
+     const [userEmail,setUserEmail] = useState('')
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from =location.state?.from?.pathname || '/'
+     
+  const {signIn,resetPassword,signInGoogle} = useContext(AuthContext)
+
+
+  const handleClick = (event) =>{
+    event.preventDefault()
+
+    const email =event.target.email.value
+    const password =event.target.password.value
+  
+    signIn(email,password)
+    .then(result=>{
+      toast.success('login success!!')
+      navigate(from,{replace:true})
+      console.log(result.user);
+    })
+  
+    .catch((error) => {
+      toast.error(error.message)
+    });
+    
+  }
+
+    
+    const handleGoogleBtn =()=>{
+      // console.log('hello google')
+      signInGoogle()
+     .then(result=>{
+       console.log(result.user)
+     })
+  
+  
+  }
+  
+   const handleReset =()=>{
+     resetPassword(userEmail)
+     .then(()=>{
+      toast.success('check your email')
+      
+    })
+  
+    .catch((error) => {
+      toast.error(error.message)
+    });
+    
+    
+   }
+
+
+
     return (
         <div className='flex justify-center items-center pt-5 pb-5'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-sky-200 text-gray-900'>
@@ -11,6 +68,7 @@ const Login = () => {
           </p>
         </div>
         <form
+        onSubmit={handleClick}
           noValidate=''
           action=''
           className='space-y-6 ng-untouched ng-pristine ng-valid'
@@ -21,6 +79,7 @@ const Login = () => {
                 Email address
               </label>
               <input
+               onBlur={(event)=>setUserEmail(event.target.value)}
                 type='email'
                 name='email'
                 id='email'
@@ -56,7 +115,7 @@ const Login = () => {
           </div>
         </form>
         <div className='space-y-1'>
-          <button className='text-xs hover:underline text-gray-500'>
+          <button onClick={handleReset} className='text-xs hover:underline text-gray-500'>
             Forgot password?
           </button>
         </div>
@@ -68,7 +127,9 @@ const Login = () => {
           <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
         </div>
         <div className='flex justify-center space-x-4'>
-          <button aria-label='Log in with Google' className='p-3 rounded-sm'>
+          <button 
+          onClick={handleGoogleBtn }
+          aria-label='Log in with Google' className='p-3 rounded-sm'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 32 32'

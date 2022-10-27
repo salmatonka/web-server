@@ -17,23 +17,17 @@ const Home = () => {
              of communication between different types 
                  of devices over the internet.<br /> A web browser is used to access web pages.Web browsers <br />can be defined as programs that display text, data, <br /> pictures, animation, and video on the Internet.</p>
 
-                 <div className='flex flex-wrap justify-center mx-3 '>
-                 <Link
-              to='/profile'
-              className='px-8 py-3 mx-5 font-semibold rounded bg-gray-900 hover:bg-gray-700 text-gray-100'
-            >
-             Profile
-            </Link>
-
+                 <div className='flex  justify-center mx-5 '>
+                 
                  <Link
               to='/login'
-              className='px-8 py-3 mx-5 font-semibold rounded bg-gray-900 hover:bg-gray-700 text-gray-100'
+              className='w-full mr-5 px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100'
             >
-             Logout
+              Login
             </Link>
                  <Link
               to='/register'
-              className='px-8 py-3 font-semibold rounded bg-gray-900 hover:bg-gray-700 text-gray-100'
+              className='w-full px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100'
             >
                Register
             </Link>

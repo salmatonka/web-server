@@ -6,8 +6,6 @@ import {Link} from 'react-router-dom';
 
 const Home = () => {
 
-  
-
 
     return (
     <div className='home-container  flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900'>
@@ -19,6 +17,8 @@ const Home = () => {
 
                  <div className='flex  justify-center mx-5 '>
                  
+                
+
                  <Link
               to='/login'
               className='w-full mr-5 px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100'
@@ -31,7 +31,7 @@ const Home = () => {
             >
                Register
             </Link>
-
+               
         </div>
         </div>
               

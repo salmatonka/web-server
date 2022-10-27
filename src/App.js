@@ -2,12 +2,16 @@ import { RouterProvider } from 'react-router-dom';
 import './App.css';
 import { routes } from './Routes/Routes/Routes';
 
-function App() {
 
+function App() {
+    
+  
   return ( 
-   <div>
-<RouterProvider router={routes} ></RouterProvider>
+    
+   <div >
+ <RouterProvider router={routes} ></RouterProvider>
    </div>
+  
   );
 }
 

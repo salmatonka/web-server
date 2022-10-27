@@ -1,27 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Topics = () => {
   
-  const [details,setDetails] = useState([])
-
-  useEffect(()=>{
-     fetch('http://localhost:5000/details')
-     .then(res=>res.json())
-     .then(data=>setDetails(data))
-   })
-
-
+    const details = useLoaderData();
+     const {_id,name,img} = details
     return (
-        <div className='col-md-4' >
+       <div>
         
- <h1>All Courses:{details.length}</h1>
+        <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
+	<img src="" alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
+	<div className="flex flex-col justify-between p-6 space-y-8">
+		<div className="space-y-2">
+			<h2 className="text-3xl font-semibold tracking-wide">Donec lectus leo</h2>
+			<p className="dark:text-gray-100">Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.</p>
+		</div>
+		<button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 dark:text-gray-900">Read more</button>
+	</div>
+</div>
      
-  {
-    details.map(detail=><p key={detail}
-    detail={detail}
-    
-    >{details.title}</p>)
-  }
+  
 
      </div>
     

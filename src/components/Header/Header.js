@@ -37,6 +37,8 @@ const Header = () => {
 			<li className="flex">
 				<Link rel="noopener noreferrer" to="/blog" className="flex items-center px-2 -mb-1 dark:border-transparent">Blog</Link>
 			</li>
+			
+
 		</ul>
 
           {user?.email ? <><li className="flex">
@@ -53,7 +55,9 @@ const Header = () => {
 	<div>
        <span > <img src={user?.photoURL
 
+
 	    ? user.photoURL
+
 
 	    :<FaUserAlt></FaUserAlt> }
 	   alt=""
@@ -73,6 +77,7 @@ const Header = () => {
 			}
                 
 	</div>
+   
 	</header>
   );
 };

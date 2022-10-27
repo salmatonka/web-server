@@ -1,39 +1,40 @@
-import React from 'react';
-import {useState,useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'; 
+import { Link, useLoaderData } from 'react-router-dom';
+import CourseDetails from '../CourseDetails/CourseDetails';
 import Details from '../Details/Details';
-import Topics from '../Topics/Topics';
+
+
 
 import "./Course.css"
 const Course = () => {
-    const [courses,setCourses] = useState([])
-
-    useEffect(()=>{
-       fetch('http://localhost:5000/courses')
-       .then(res=>res.json())
-       .then(data=>setCourses(data))
-     })
-  
+    
+     const allItems = useLoaderData();
+    
    
     return (
 
-<div className='left-container'>
-       <div className="cart-container">
-<h1>helll</h1>
-<Topics></Topics>
+  <div className='container'>
+   <div className='row gap-3'>
 
 
-       </div>
+     <h1>All Courses:{allItems.length}</h1>
+  
+    {
+    allItems.map(items=><CourseDetails 
+      key={items._id}
+      items={items}
+    ></CourseDetails>)
+    }
+  
+  </div>
 
-<div className="right-container">
-<h1>All Courses:{courses.length}</h1>
- {
-    courses.map(course=> <h4><Link to={`/course/${course.id}`}>{course.name}</Link></h4> )
- }
+   <div>
 
+    <Details></Details>
+   </div>
 
 </div>
-    </div>
+    
 
 
         

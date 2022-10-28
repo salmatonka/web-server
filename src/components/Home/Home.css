@@ -9,3 +9,17 @@
     color: black;
 
 }
+
+@media only screen and (max-width:550){
+ .home-container{
+    height: 100%;
+    
+}
+.text{
+    width: 500px;
+    max-width: 100vh;
+}
+
+}
+
+

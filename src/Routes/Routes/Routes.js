@@ -8,6 +8,7 @@ import FAQ from '../../components/FAQ/FAQ';
 import Home from '../../components/Home/Home';
 import Login from '../../components/Login/Login';
 import Register from '../../components/Register/Register';
+import Topics from '../../components/Topics/Topics';
 import Main from '../../layout/Main';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
@@ -32,6 +33,12 @@ export const routes = createBrowserRouter([
             
             },
             {
+                path:'/course',
+                element:<Course></Course>,
+              
+            
+            },
+            {
                 path:'/course/:id',
                 element:<Course></Course>,
               
@@ -49,7 +56,14 @@ export const routes = createBrowserRouter([
                 path:'/details/:id',
                 element:<Details></Details>,
                 loader:({params}) =>{
-                    fetch(`http://localhost:5000/details/${params.id}}`)
+                    fetch(`http://localhost:5000/course/${params.id}}`)
+                }
+            },
+            {
+                path:'/topics',
+                element:<Topics></Topics>,
+                loader:()=>{
+                    fetch(`http://localhost:5000/course`)
                 }
             },
             {

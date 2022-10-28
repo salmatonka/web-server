@@ -5,11 +5,12 @@ import Details from '../Details/Details';
 
 
 
+
 import "./Course.css"
 const Course = () => {
     
      const allItems = useLoaderData();
-    
+     
    
     return (
 
@@ -17,7 +18,7 @@ const Course = () => {
    <div className='row gap-3'>
 
 
-     <h1>All Courses:{allItems.length}</h1>
+     <h1 className='text-2xl font-semibold px-8'>All Courses:{allItems.length}</h1>
   
     {
     allItems.map(items=><CourseDetails 
@@ -28,7 +29,7 @@ const Course = () => {
   
   </div>
 
-   <div>
+   <div className=''>
 
     <Details></Details>
    </div>

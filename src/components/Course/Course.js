@@ -31,7 +31,7 @@ const Course = () => {
 
    <div className=''>
 
-    <Details></Details>
+   
    </div>
 
 </div>

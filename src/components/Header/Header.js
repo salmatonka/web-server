@@ -38,11 +38,12 @@ const Header = () => {
 				<Link rel="noopener noreferrer" to="/blog" className="flex items-center px-2 -mb-1 dark:border-transparent">Blog</Link>
 			</li>
 			
+			
 
 		</ul>
 
           {user?.email ? <><li className="flex">
-				<Link rel="noopener noreferrer" to="/course" className="flex items-center pe-10 dark:border-transparent">Course</Link>
+				<Link rel="noopener noreferrer" to="/topics" className="flex items-center pe-10 dark:border-transparent">Topics</Link>
 			</li>
 			<li className="flex">
 				<Link rel="noopener noreferrer" to="/courseDetails" className="flex items-center   dark:border-transparent">CourseDetails</Link>
